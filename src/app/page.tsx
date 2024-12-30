@@ -30,7 +30,6 @@ export default async function HomePage() {
 
               <div className="flex flex-row justify-between mt-4">
                 <Sort />
-                <Filters />
               </div>
 
 

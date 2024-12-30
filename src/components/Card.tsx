@@ -36,28 +36,13 @@ export function Card({ card }: { card: IServerCard }) {
         </div>
         <div className="flex flex-col justify-between">
           <div className="text-2xl">{card.title}</div>
+          <div className="flex flex-row space-x-2 w-full">
+            <div>{card.members}</div>
+            <div className="text-text-shadow">members</div>
+          </div>
 
-          {attributes.length > 0 && (
-            <div className="flex flex-row space-x-2 text-text-shadow">
-              {attributes.map((attr, index) => (
-                <React.Fragment key={attr.key}>
-                  {index > 0 && <div className="text-text">/</div>}
-                  <div>{attr.label}</div>
-                </React.Fragment>
-              ))}
-            </div>
-          )}
         </div>
       </div>
-
-      <div className="flex flex-row space-x-4">
-        <div className="flex flex-row space-x-2 w-full">
-          <div>{card.members}</div>
-          <div className="text-text-shadow">members</div>
-        </div>
-        {/* You can add additional stats here similar to the YouTube card if needed */}
-      </div>
-
       <div className="min-h-[60px]">
         <p className="!leading-5 line-clamp-3">{card.description}</p>
       </div>
