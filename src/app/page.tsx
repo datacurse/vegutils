@@ -9,8 +9,6 @@ import { Navigation } from "@/components/Navigation";
 
 export default async function HomePage() {
   const serverCardsRaw = await readCsvFile("servers.csv");
-  const serverCards = parseServerCards(serverCardsRaw);
-  // console.log(serverCards);
 
   return (
     <body>

@@ -22,11 +22,6 @@ export const state = proxy({
   filteredServers: [] as IServerCard[],
   searchQuery: '',
   isLoading: false,
-  filters: {
-    verification: false,
-    adultsOnly: false,
-    nsfw: false,
-  },
   currentSort: sortOptions[0]!,
 });
 
@@ -49,11 +44,6 @@ export const actions = {
     this.applyFilters();
   },
 
-  setFilter(filter: keyof typeof state.filters, value: boolean) {
-    state.filters[filter] = value;
-    this.applyFilters();
-  },
-
   handleSort(option: SortOption) {
     const newDirection =
       state.currentSort.key === option.key &&
@@ -73,25 +63,20 @@ export const actions = {
         server.title.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
         server.description.toLowerCase().includes(state.searchQuery.toLowerCase());
 
-      const activeFilters = Object.entries(state.filters).filter(([_, value]) => value);
-      if (!activeFilters.length) return matchesSearch;
-
-      const matchesFilters = activeFilters.some(([key]) => server[key as keyof IServerCard])
-
-      return matchesSearch && matchesFilters;
+      return matchesSearch;
     });
 
     filtered.sort((a, b) => {
       const valueA = a[state.currentSort.key];
       const valueB = b[state.currentSort.key];
-      
+
       if (typeof valueA === 'string' && typeof valueB === 'string') {
-        return (state.currentSort.direction === 'asc' ? 1 : -1) * 
+        return (state.currentSort.direction === 'asc' ? 1 : -1) *
           valueA.localeCompare(valueB);
       }
-      
+
       // For numbers or other comparable types
-      return (state.currentSort.direction === 'asc' ? 1 : -1) * 
+      return (state.currentSort.direction === 'asc' ? 1 : -1) *
         (valueA > valueB ? 1 : valueA < valueB ? -1 : 0);
     });
 

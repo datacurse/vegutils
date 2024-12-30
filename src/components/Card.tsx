@@ -11,13 +11,6 @@ export function Card({ card }: { card: IServerCard }) {
     }
   };
 
-  // Create array of active attributes
-  const attributes = [
-    { key: 'verification', label: 'verification', value: card.verification },
-    { key: 'adultsOnly', label: 'adults only', value: card.adultsOnly },
-    { key: 'nsfw', label: 'nsfw', value: card.nsfw },
-  ].filter(attr => attr.value);
-
   return (
     <div
       onClick={handleClick}
