@@ -1,7 +1,7 @@
 "use client"
 import { IoSearchOutline } from "react-icons/io5";
 import { useSnapshot } from 'valtio';
-import { state, actions } from '@/store';
+import { state, actions } from '../_store';
 
 export const Search: React.FC = () => {
   // const { searchQuery, setSearchQuery, filters, setFilter, isExclusiveFilter, toggleFilterMode } = useServerSearchStore();

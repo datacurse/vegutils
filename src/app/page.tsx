@@ -1,15 +1,6 @@
-"use server";
-import { parseServerCards } from "@/actions/parseServerCard";
-import { readCsvFile } from "@/actions/readCsvFile";
-import { Search } from "@/components/filter/Search";
-import { ServerGrid } from "@/components/ServerGrid";
-import { Sort } from "@/components/filter/Sorting";
-import { Filters } from "@/components/filter/Filters";
 import { Navigation } from "@/components/Navigation";
 
 export default async function HomePage() {
-  const serverCardsRaw = await readCsvFile("servers.csv");
-
   return (
     <body>
       <div className="flex min-h-screen flex-col bg-bg1 text-text">
@@ -24,18 +15,7 @@ export default async function HomePage() {
           </header>
           <div className="container mx-auto mb-10 flex-1 px-4 sm:px-6 lg:px-8">
             <main>
-              <Search />
-
-              <div className="flex flex-row justify-between mt-4">
-                <Sort />
-              </div>
-
-
-              <div className="my-12 space-y-10">
-                <section className="space-y-5">
-                  <ServerGrid />
-                </section>
-              </div>
+              Hello
             </main>
           </div>
         </div>

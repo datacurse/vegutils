@@ -1,7 +1,7 @@
 "use client"
 import { useEffect } from "react";
 import { useSnapshot } from 'valtio';
-import { state, actions } from '@/store';
+import { state, actions } from '../_store';
 import { Card } from "./Card";
 
 export function ServerGrid() {

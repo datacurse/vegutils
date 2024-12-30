@@ -1,6 +1,6 @@
 "use client"
 import { useSnapshot } from 'valtio';
-import { state, actions, sortOptions } from '@/store';
+import { state, actions, sortOptions } from '../_store';
 import { Pill } from '@/components/Pill';
 
 export function Sort() {
