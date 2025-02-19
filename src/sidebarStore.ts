@@ -12,7 +12,6 @@ export interface SidebarDocItem {
   slug: string;
 }
 
-
 export interface SidebarLinkItem {
   type: 'link';
   title: string;
@@ -30,7 +29,6 @@ export interface SidebarCategoryItem {
   collapsed: boolean;
   children: SidebarItem[];
 }
-
 
 export const sidebarStore = proxy<{ items: SidebarItem[] }>({
   items: [
@@ -53,24 +51,23 @@ export const sidebarStore = proxy<{ items: SidebarItem[] }>({
         },
         {
           type: 'category',
-          title: 'Getting Started',
+          title: 'Advanced Setup',
           icon: FaRocket,
           iconProps: { size: 20 },
-          collapsed: false,
+          collapsed: true, // This nested category starts collapsed
           children: [
             {
               type: 'doc',
-              title: 'Introduction',
-              slug: 'introduction'
+              title: 'Configuration',
+              slug: 'configuration'
             },
             {
               type: 'link',
-              title: 'GitHub Repository',
-              href: 'https://github.com/datacurse/wakusaurus'
+              title: 'API Documentation',
+              href: 'https://github.com/datacurse/wakusaurus/docs'
             }
           ]
         },
-
       ]
     },
     {
@@ -82,4 +79,25 @@ export const sidebarStore = proxy<{ items: SidebarItem[] }>({
     }
   ] as SidebarItem[]
 });
+
+// Helper function to find and toggle a category's collapsed state by title (useful for external control)
+export function toggleCategoryByTitle(title: string) {
+  const toggleInItems = (items: SidebarItem[]): boolean => {
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      if (item.type === 'category') {
+        if (item.title === title) {
+          item.collapsed = !item.collapsed;
+          return true;
+        }
+        if (toggleInItems(item.children)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  };
+
+  toggleInItems(sidebarStore.items);
+}
 
