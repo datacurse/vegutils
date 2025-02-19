@@ -10,7 +10,7 @@ export function Sidebar() {
   const snapshot = useSnapshot(sidebarStore);
 
   return (
-    <div>
+    <div className='w-[292px] p-2'>
       {snapshot.items.map((item, idx) => (
         <SidebarItemRenderer key={idx} item={item} path={[idx]} />
       ))}
@@ -35,10 +35,10 @@ function DocItem({ item }: { item: Extract<SidebarItem, { type: 'doc' }> }) {
   const { icon: Icon, iconProps } = item;
 
   return (
-    <div className='bg-green-500 flex flex-row'>
+    <div className="flex items-center justify-between hover:bg-[#f2f2f2] rounded-md h-8 pl-4">
       {Icon && (<Icon {...iconProps} />)}
       <Link to={`/${item.slug}`}>{item.title}</Link>
-    </div>
+    </div >
   );
 }
 
@@ -46,7 +46,7 @@ function LinkItem({ item }: { item: Extract<SidebarItem, { type: 'link' }> }) {
   const { icon: Icon, iconProps } = item;
 
   return (
-    <div className='bg-blue-500 flex flex-row'>
+    <div className="flex items-center justify-between hover:bg-[#f2f2f2] rounded-md h-8 pl-4">
       {Icon && (<Icon {...iconProps} />)}
       <a href={item.href} target="_blank" rel="noopener noreferrer">
         {item.title}
@@ -70,10 +70,10 @@ function CategoryItem({ item, path }: { item: Extract<SidebarItem, { type: 'cate
   return (
     <div>
       <div
-        className="flex items-center justify-between hover:bg-[#f2f2f2] rounded-md pl-3"
+        className="flex items-center justify-between hover:bg-[#f2f2f2] rounded-md"
         onClick={toggleCollapse}
       >
-        <div className='flex flex-row items-center gap-2'>
+        <div className='flex flex-row items-center gap-2 px-3'>
           {Icon && <Icon {...iconProps} />}
           <div>{item.title}</div>
         </div>
