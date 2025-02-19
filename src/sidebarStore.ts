@@ -1,6 +1,5 @@
 import { proxy } from 'valtio';
 import type { IconType } from 'react-icons';
-import { FaBolt, FaRocket } from 'react-icons/fa6';
 
 export type SidebarItem = SidebarDocItem | SidebarLinkItem | SidebarCategoryItem;
 

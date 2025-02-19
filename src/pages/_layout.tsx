@@ -1,10 +1,10 @@
-import '../styles.css';
+import '@/styles.css';
 
 import type { ReactNode } from 'react';
 
-import { Footer } from '../components/footer';
-import { Header } from '../components/Header';
-import { Sidebar } from '../components/sidebar';
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/Header';
+import { Sidebar } from '@/components/sidebar';
 
 type RootLayoutProps = { children: ReactNode };
 

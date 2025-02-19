@@ -29,7 +29,7 @@ export function Breadcrumbs() {
           const href = `/${pathSegments.slice(0, index + 1).join('/')}`;
 
           return (
-            <li key={href} className="breadcrumb__item">
+            <li key={href} className="">
               <div className="flex items-center">
                 <span className="mx-2 text-gray-400">/</span>
                 <Link
