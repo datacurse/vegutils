@@ -13,6 +13,8 @@ import type { getConfig as CatchAll_getConfig } from './pages/[...catchAll]';
 // prettier-ignore
 type Page =
 | ({ path: '/about' } & GetConfigResponse<typeof About_getConfig>)
+| { path: '/getting-started/installation'; render: 'dynamic' }
+| { path: '/getting-started'; render: 'dynamic' }
 | ({ path: '/' } & GetConfigResponse<typeof Index_getConfig>)
 | ({ path: '/[...catchAll]' } & GetConfigResponse<typeof CatchAll_getConfig>);
 
