@@ -35,6 +35,7 @@ export const sidebarStore = proxy<{ items: SidebarItem[] }>({
     {
       type: 'category',
       title: 'Getting Started',
+      slug: 'getting-started',
       icon: FaRocket,
       iconProps: { size: 20 },
       collapsed: false,
@@ -52,6 +53,7 @@ export const sidebarStore = proxy<{ items: SidebarItem[] }>({
         {
           type: 'category',
           title: 'Advanced Setup',
+          slug: 'advanced-setup',
           icon: FaRocket,
           iconProps: { size: 20 },
           collapsed: true, // This nested category starts collapsed

@@ -2,63 +2,94 @@
 
 import { useSnapshot } from 'valtio';
 import { sidebarStore, SidebarItem } from '../sidebarStore';
-import { Link } from 'waku';
+import { Link, useRouter_UNSTABLE as useRouter } from 'waku';
 import { FaChevronRight } from "react-icons/fa6";
 import { cn } from '@udecode/cn';
 
 export function Sidebar() {
   const snapshot = useSnapshot(sidebarStore);
+  const router = useRouter();
 
   return (
-    <div className='w-[292px] p-2'>
+    <div className='w-[300px] p-2'>
       {snapshot.items.map((item, idx) => (
-        <SidebarItemRenderer key={idx} item={item} path={[idx]} />
+        <SidebarItemRenderer
+          key={idx}
+          item={item}
+          path={[idx]}
+          slugPath={[]}
+          currentPath={router.path}
+        />
       ))}
     </div>
   );
 }
 
-function SidebarItemRenderer({ item, path }: { item: SidebarItem; path: number[] }) {
+function SidebarItemRenderer({
+  item,
+  path,
+  slugPath = [],
+  currentPath
+}: {
+  item: SidebarItem;
+  path: number[];
+  slugPath?: string[];
+  currentPath: string;
+}) {
   switch (item.type) {
     case 'doc':
-      return <DocItem item={item} />;
+      return <DocItem item={item} slugPath={slugPath} currentPath={currentPath} />;
     case 'link':
       return <LinkItem item={item} />;
     case 'category':
-      return <CategoryItem item={item} path={path} />;
+      return <CategoryItem item={item} path={path} slugPath={slugPath} currentPath={currentPath} />;
     default:
       return null;
   }
 }
 
-function DocItem({ item }: { item: Extract<SidebarItem, { type: 'doc' }> }) {
-  const { icon: Icon, iconProps } = item;
+function DocItem({ item, slugPath, currentPath }: {
+  item: Extract<SidebarItem, { type: 'doc' }>;
+  slugPath: string[];
+  currentPath: string;
+}) {
+  const fullPath = [...slugPath, item.slug].join('/');
+  const isActive = currentPath === `/${fullPath}`;
 
   return (
-    <div className="flex items-center justify-between hover:bg-[#f2f2f2] rounded-md h-8 pl-4">
-      {Icon && (<Icon {...iconProps} />)}
-      <Link to={`/${item.slug}`}>{item.title}</Link>
-    </div >
+    <div className={cn(
+      "flex items-center hover:bg-[#f2f2f2] rounded-md h-8 pl-4",
+      isActive && 'bg-[#e6e6e6]'
+    )}>
+      <Link to={`/${fullPath}`} className="w-full py-1">
+        {item.title}
+      </Link>
+    </div>
   );
 }
 
 function LinkItem({ item }: { item: Extract<SidebarItem, { type: 'link' }> }) {
-  const { icon: Icon, iconProps } = item;
-
   return (
-    <div className="flex items-center justify-between hover:bg-[#f2f2f2] rounded-md h-8 pl-4">
-      {Icon && (<Icon {...iconProps} />)}
-      <a href={item.href} target="_blank" rel="noopener noreferrer">
+    <div className="flex items-center hover:bg-[#f2f2f2] rounded-md h-8 pl-4">
+      <a href={item.href} target="_blank" rel="noopener noreferrer" className="w-full py-1">
         {item.title}
       </a>
     </div>
   );
 }
 
-function CategoryItem({ item, path }: { item: Extract<SidebarItem, { type: 'category' }>; path: number[] }) {
-  const { icon: Icon, iconProps } = item;
+function CategoryItem({ item, path, slugPath = [], currentPath }: {
+  item: Extract<SidebarItem, { type: 'category' }>;
+  path: number[];
+  slugPath?: string[];
+  currentPath: string;
+}) {
+  const newSlugPath = item.slug ? [...slugPath, item.slug] : slugPath;
+  const fullPath = newSlugPath.join('/');
+  const isActive = currentPath === `/${fullPath}`;
 
-  const toggleCollapse = () => {
+  const toggleCollapse = (e: React.MouseEvent) => {
+    e.stopPropagation();
     let current = sidebarStore.items;
     for (let i = 0; i < path.length - 1; i++) {
       current = current[path[i]].children;
@@ -69,15 +100,21 @@ function CategoryItem({ item, path }: { item: Extract<SidebarItem, { type: 'cate
 
   return (
     <div>
-      <div
-        className="flex items-center justify-between hover:bg-[#f2f2f2] rounded-md"
-        onClick={toggleCollapse}
-      >
-        <div className='flex flex-row items-center gap-2 px-3'>
-          {Icon && <Icon {...iconProps} />}
+      <div className={cn(
+        "flex items-center justify-between hover:bg-[#f2f2f2] rounded-md",
+        isActive && 'bg-[#e6e6e6]'
+      )}>
+        <Link
+          to={`/${fullPath}`}
+          className="flex flex-row items-center gap-2 px-3 flex-1 py-1"
+        >
+          {item.icon && <item.icon {...item.iconProps} />}
           <div>{item.title}</div>
-        </div>
-        <div className='px-3 py-[6px] hover:bg-[#e6e6e6] duration-200 rounded-md'>
+        </Link>
+        <div
+          className='px-3 py-[6px] hover:bg-[#e6e6e6] duration-200 rounded-md cursor-pointer'
+          onClick={toggleCollapse}
+        >
           <div className='h-5 w-5 flex items-center justify-center'>
             <FaChevronRight
               className={cn(
@@ -91,13 +128,17 @@ function CategoryItem({ item, path }: { item: Extract<SidebarItem, { type: 'cate
 
       <div
         className="grid transition-[grid-template-rows] duration-300 ml-4"
-        style={{
-          gridTemplateRows: item.collapsed ? '0fr' : '1fr',
-        }}
+        style={{ gridTemplateRows: item.collapsed ? '0fr' : '1fr' }}
       >
         <div className="overflow-hidden min-h-0">
           {item.children.map((child, idx) => (
-            <SidebarItemRenderer key={idx} item={child} path={[...path, idx]} />
+            <SidebarItemRenderer
+              key={idx}
+              item={child}
+              path={[...path, idx]}
+              slugPath={newSlugPath}
+              currentPath={currentPath}
+            />
           ))}
         </div>
       </div>

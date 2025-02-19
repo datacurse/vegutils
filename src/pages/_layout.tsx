@@ -16,12 +16,14 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       <meta name="description" content={data.description} />
       <link rel="icon" type="image/png" href={data.icon} />
       <Header />
-      <div className="flex flex-row min-w-0 mx-auto">
+      <div className="flex flex-row min-w-0 mx-auto items-stretch">
         <Sidebar />
+        <div className="w-[1px] bg-gray-200" />
         <main className="min-w-0 flex-1 max-w-[1654px] py-8 px-24">
           {children}
         </main>
       </div>
+
       <Footer />
     </div>
   );
