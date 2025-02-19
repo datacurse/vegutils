@@ -19,7 +19,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       <div className="flex flex-row min-w-0 mx-auto items-stretch">
         <Sidebar />
         <div className="w-[1px] bg-gray-200" />
-        <main className="min-w-0 flex-1 max-w-[1654px] py-8 px-24">
+        <main className="p-4">
           {children}
         </main>
       </div>
