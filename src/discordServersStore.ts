@@ -99,19 +99,17 @@ export const discordServersStore = proxy<DiscordServersStore>({
     }
 
     // Sort
-    filtered.sort((a, b) => {
-      if (this.sortKey === 'members') {
-        return b.members - a.members; // Always descending for members
-      } else if (this.sortKey === 'name') {
+    if (this.sortKey === 'members') {
+      filtered.sort((a, b) => b.members - a.members); // Always descending
+    } else if (this.sortKey === 'name') {
+      filtered.sort((a, b) => {
         const aValue = a.title.toLowerCase();
         const bValue = b.title.toLowerCase();
-
-        if (aValue < bValue) return -1; // Ascending for name (A → Z)
-        if (aValue > bValue) return 1;
+        if (aValue < bValue) return this.isDescending ? 1 : -1;
+        if (aValue > bValue) return this.isDescending ? -1 : 1;
         return 0;
-      }
-      return 0;
-    });
+      });
+    }
 
     this.filteredServers = filtered;
   }

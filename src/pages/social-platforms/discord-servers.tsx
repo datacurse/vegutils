@@ -5,6 +5,8 @@ import { useSnapshot } from 'valtio'
 import Papa from 'papaparse'
 import { cn } from '@udecode/cn'
 import { discordServersStore } from '@/discordServersStore'
+import * as Switch from '@radix-ui/react-switch';
+
 
 // Types
 interface DiscordServer {
@@ -17,26 +19,33 @@ interface DiscordServer {
 }
 
 // Utility Components
-const AndOrToggle: React.FC<{
-  isAndMode: boolean
-  onToggle: () => void
-}> = ({ isAndMode, onToggle }) => (
-  <div className="flex items-center gap-3">
-    <span className="text-sm font-medium text-gray-900">
-      {isAndMode ? 'AND Mode' : 'OR Mode'}
-    </span>
-    <label className="relative inline-flex items-center cursor-pointer">
-      <input
-        type="checkbox"
-        className="sr-only peer"
+function AndOrToggle({
+  isAndMode,
+  onToggle,
+}: {
+  isAndMode: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <div className="flex items-center gap-3">
+      {/* Label to indicate the current mode */}
+      <span className="text-sm font-medium text-gray-900">
+        {isAndMode ? 'AND Mode' : 'OR Mode'}
+      </span>
+
+      {/* Radix UI Switch */}
+      <Switch.Root
+        className="relative h-[25px] w-[42px] cursor-default rounded-full bg-gray-200  outline-none  data-[state=checked]:bg-[#18816a]"
         checked={isAndMode}
-        onChange={onToggle}
-      />
-      <div className="w-12 h-6 rounded-full transition-colors bg-gray-200 peer-checked:bg-[#18816a]" />
-      <div className="absolute top-[2px] left-[2px] w-5 h-5 bg-white rounded-full border border-gray-300 transition-all peer-checked:left-[26px]" />
-    </label>
-  </div>
-)
+        onCheckedChange={onToggle}
+      >
+        <Switch.Thumb
+          className="block size-[21px] translate-x-0.5 rounded-full bg-white  transition-transform duration-100 will-change-transform data-[state=checked]:translate-x-[19px]"
+        />
+      </Switch.Root>
+    </div>
+  );
+}
 
 const FilterSortButton: React.FC<{
   label: string
@@ -95,11 +104,11 @@ const DiscordServers: React.FC = () => {
           <div className="flex items-center gap-4">
             <AndOrToggle
               isAndMode={snap.isAndMode}
-              onToggle={discordServersStore.toggleAndMode}
+              onToggle={() => discordServersStore.toggleAndMode()}
             />
             <button
               className="px-3 py-1 rounded border border-[#18816a] text-[#18816a] hover:bg-[#e6f7f4] transition-colors"
-              onClick={discordServersStore.clearFilters}
+              onClick={() => discordServersStore.clearFilters()}
             >
               Clear All
             </button>
@@ -119,27 +128,28 @@ const DiscordServers: React.FC = () => {
           )}
         </div>
 
-        <div className="flex items-center justify-between gap-4">
-          <input
-            type="text"
-            placeholder="Search by title or description..."
-            className="w-1/3 px-3 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#18816a]"
-            value={snap.searchQuery}
-            onChange={(e) => discordServersStore.setSearchQuery(e.target.value)}
-          />
-          <div className="flex items-center gap-4">
-            <span className="text-gray-700">Sort by</span>
-            <FilterSortButton
-              label="Members"
-              active={snap.sortKey === 'members'}
-              onClick={() => discordServersStore.setSortKey('members')}
-            />
-            <FilterSortButton
-              label="Name"
-              active={snap.sortKey === 'name'}
-              onClick={() => discordServersStore.setSortKey('name')}
-            />
-          </div>
+        <div className="flex items-center gap-4">
+          <span className="text-gray-700">Sort by</span>
+          <button
+            className={snap.sortKey === 'members' ? 'font-bold' : ''}
+            onClick={() => discordServersStore.setSortKey('members')}
+          >
+            Members
+          </button>
+          <button
+            className={snap.sortKey === 'name' ? 'font-bold' : ''}
+            onClick={() => discordServersStore.setSortKey('name')}
+          >
+            Name
+          </button>
+          {snap.sortKey === 'name' && (
+            <button
+              className="px-2 py-1 border border-gray-300 rounded"
+              onClick={() => discordServersStore.toggleDescending()}
+            >
+              {snap.isDescending ? 'Z → A' : 'A → Z'}
+            </button>
+          )}
         </div>
       </section>
 
@@ -165,17 +175,20 @@ const DiscordServers: React.FC = () => {
             </div>
 
             <div className="mt-4">
-              <div className="flex flex-wrap gap-2">
-                {server.tags.split(',').map((tag, i) => (
-                  <span
-                    key={i}
-                    className="px-2 py-1 border border-gray-300 rounded-md text-xs font-medium text-gray-700"
-                  >
-                    {tag.trim()}
-                  </span>
-                ))}
-              </div>
-              <div className="mt-4 flex justify-between items-center">
+              <div className="flex flex-wrap gap-1">
+                {server.tags
+                  .split(',')
+                  .map((tag) => tag.trim())
+                  .filter((tag) => tag !== '')
+                  .map((tag, index) => (
+                    <span
+                      key={index}
+                      className="px-2 py-1 border border-gray-300 rounded-md text-xs font-medium text-gray-700"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+              </div>              <div className="mt-4 flex justify-between items-center">
                 <span className="text-sm text-gray-600">
                   {server.members.toLocaleString()} members
                 </span>
