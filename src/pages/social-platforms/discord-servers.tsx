@@ -18,53 +18,8 @@ interface DiscordServer {
   description: string
 }
 
-// Utility Components
-function AndOrToggle({
-  isAndMode,
-  onToggle,
-}: {
-  isAndMode: boolean;
-  onToggle: () => void;
-}) {
-  return (
-    <div className="flex items-center gap-3">
-      {/* Label to indicate the current mode */}
-      <span className="text-sm font-medium text-gray-900">
-        {isAndMode ? 'AND Mode' : 'OR Mode'}
-      </span>
-
-      {/* Radix UI Switch */}
-      <Switch.Root
-        className="relative h-[25px] w-[42px] cursor-default rounded-full bg-gray-200  outline-none  data-[state=checked]:bg-[#18816a]"
-        checked={isAndMode}
-        onCheckedChange={onToggle}
-      >
-        <Switch.Thumb
-          className="block size-[21px] translate-x-0.5 rounded-full bg-white  transition-transform duration-100 will-change-transform data-[state=checked]:translate-x-[19px]"
-        />
-      </Switch.Root>
-    </div>
-  );
-}
-
-const FilterSortButton: React.FC<{
-  label: string
-  active: boolean
-  onClick: () => void
-}> = ({ label, active, onClick }) => (
-  <button
-    className={cn(
-      'px-2 py-1 border border-gray-300 rounded transition-colors',
-      active ? 'bg-[#e6f7f4] text-[#18816a]' : 'text-gray-700 hover:bg-gray-100'
-    )}
-    onClick={onClick}
-  >
-    {label}
-  </button>
-)
-
 // Main Component
-const DiscordServers: React.FC = () => {
+export default function DiscordServers() {
   const snap = useSnapshot(discordServersStore)
 
   // Load CSV data
@@ -217,4 +172,49 @@ const DiscordServers: React.FC = () => {
   )
 }
 
-export default DiscordServers
+// Utility Components
+function AndOrToggle({
+  isAndMode,
+  onToggle,
+}: {
+  isAndMode: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <div className="flex items-center gap-3">
+      {/* Label to indicate the current mode */}
+      <span className="text-sm font-medium text-gray-900">
+        {isAndMode ? 'AND Mode' : 'OR Mode'}
+      </span>
+
+      {/* Radix UI Switch */}
+      <Switch.Root
+        className="relative h-[25px] w-[42px] cursor-default rounded-full bg-gray-200  outline-none  data-[state=checked]:bg-[#18816a]"
+        checked={isAndMode}
+        onCheckedChange={onToggle}
+      >
+        <Switch.Thumb
+          className="block size-[21px] translate-x-0.5 rounded-full bg-white  transition-transform duration-100 will-change-transform data-[state=checked]:translate-x-[19px]"
+        />
+      </Switch.Root>
+    </div>
+  );
+}
+
+const FilterSortButton: React.FC<{
+  label: string
+  active: boolean
+  onClick: () => void
+}> = ({ label, active, onClick }) => (
+  <button
+    className={cn(
+      'px-2 py-1 border border-gray-300 rounded transition-colors',
+      active ? 'bg-[#e6f7f4] text-[#18816a]' : 'text-gray-700 hover:bg-gray-100'
+    )}
+    onClick={onClick}
+  >
+    {label}
+  </button>
+)
+
+
