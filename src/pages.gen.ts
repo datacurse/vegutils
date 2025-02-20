@@ -14,7 +14,8 @@ type Page =
 | { path: '/getting-started'; render: 'dynamic' }
 | ({ path: '/' } & GetConfigResponse<typeof Index_getConfig>)
 | { path: '/social-platforms/discord-servers'; render: 'dynamic' }
-| { path: '/social-platforms/youtube-channels'; render: 'dynamic' };
+| { path: '/social-platforms/youtube-channels'; render: 'dynamic' }
+| { path: '/social-platforms'; render: 'dynamic' };
 
 // prettier-ignore
 declare module 'waku/router' {

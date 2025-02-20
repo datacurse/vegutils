@@ -5,100 +5,7 @@ import { proxy, useSnapshot } from 'valtio'
 import Papa from 'papaparse'
 import { cn } from '@udecode/cn'
 import * as Switch from '@radix-ui/react-switch';
-
-
-interface YoutubeChannelsStore {
-  channels: YoutubeChannel[];
-  filteredChannels: YoutubeChannel[];
-  filters: string[];
-  searchQuery: string;
-  sortKey: 'title' | 'subscriberCount';
-  isDescending: boolean;
-  isAndMode: boolean;
-  setSearchQuery: (query: string) => void;
-  toggleFilter: (filter: string) => void;
-  setSortKey: (key: 'name' | 'members') => void;
-  toggleDescending: () => void;
-  toggleAndMode: () => void;
-  clearFilters: () => void;
-  applyFiltersAndSorting: () => void;
-}
-
-export const youtubeChannelsStore = proxy<YoutubeChannelsStore>({
-  channels: [],
-  filteredChannels: [],
-  filters: [],
-  searchQuery: '',
-  sortKey: 'title',
-  isDescending: false,
-  isAndMode: false,
-
-  setSearchQuery(query) {
-    this.searchQuery = query;
-    this.applyFiltersAndSorting();
-  },
-
-  toggleFilter(filter) {
-    if (this.filters.includes(filter)) {
-      this.filters = this.filters.filter((f) => f !== filter);
-    } else {
-      this.filters.push(filter);
-    }
-    this.applyFiltersAndSorting();
-  },
-
-  setSortKey(key) {
-    //this.sortKey = key;
-    this.applyFiltersAndSorting();
-  },
-
-  toggleDescending() {
-    this.isDescending = !this.isDescending;
-    this.applyFiltersAndSorting();
-  },
-
-  toggleAndMode() {
-    this.isAndMode = !this.isAndMode;
-    this.applyFiltersAndSorting();
-  },
-
-  clearFilters() {
-    this.filters = [];
-    this.searchQuery = '';
-    this.sortKey = 'title';
-    this.isDescending = false;
-    this.isAndMode = false;
-    this.applyFiltersAndSorting();
-  },
-
-  applyFiltersAndSorting() {
-    let filtered = [...this.channels];
-
-    // Search by query
-    if (this.searchQuery) {
-      filtered = filtered.filter(
-        (server) =>
-          server.title.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-          server.description.toLowerCase().includes(this.searchQuery.toLowerCase())
-      );
-    }
-
-    this.filteredChannels = filtered;
-  }
-})
-
-interface YoutubeChannel {
-  id: string
-  title: string
-  description: string
-  handle: string
-  publishedAt: string
-  thumbnail: string
-  country: string
-  viewCount: number
-  subscriberCount: number
-  videoCount: number
-}
+import { YoutubeChannel, youtubeChannelsStore } from '@/stores/youtubeChannelsStore'
 
 export default function YoutubeChannels() {
   const snap = useSnapshot(youtubeChannelsStore)
@@ -115,7 +22,7 @@ export default function YoutubeChannels() {
             description: row.description ?? '',
             handle: row.handle ?? '',
             publishedAt: row.publishedAt ?? '',
-            thumbnail: row.thumbnail ?? '',
+            thumbnailUrl: row.thumbnailUrl ?? '',
             country: row.country ?? '',
             viewCount: Number(row.viewCount) ?? 0,
             subscriberCount: Number(row.subscriberCount) ?? 0,
@@ -126,6 +33,8 @@ export default function YoutubeChannels() {
       },
     })
   }, [])
+
+  console.log(snap.channels.filter(channel => channel.thumbnailUrl))
 
   return (
     <div className="container py-6">
@@ -200,7 +109,7 @@ export default function YoutubeChannels() {
             <div className="flex-1">
               <div className="flex items-center gap-4">
                 <img
-                  src={channel.thumbnail}
+                  src={channel.thumbnailUrl}
                   alt={channel.title}
                   className="w-16 h-16 object-cover rounded-md"
                 />
@@ -213,19 +122,20 @@ export default function YoutubeChannels() {
 
             <div className="mt-4">
               <div className="flex flex-wrap gap-1">
-              </div>              <div className="mt-4 flex justify-between items-center">
+              </div>
+              <div className="mt-4 flex justify-between items-center">
                 <span className="text-sm text-gray-600">
                   {channel.subscriberCount.toLocaleString()} subscribers
                 </span>
                 <div className="flex gap-3">
                   <button
                     className="text-[#18816a] hover:underline"
-                    onClick={() => navigator.clipboard.writeText(channel.handle)}
+                    onClick={() => navigator.clipboard.writeText(`https://www.youtube.com/@${channel.handle}`)}
                   >
                     Copy
                   </button>
                   <a
-                    href={channel.handle}
+                    href={`https://www.youtube.com/@${channel.handle}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#18816a] hover:underline"
