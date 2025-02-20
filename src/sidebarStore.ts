@@ -38,29 +38,19 @@ export const sidebarStore = proxy<{ items: SidebarItem[] }>({
     },
     {
       type: 'category',
-      title: 'Getting Started',
-      slug: 'getting-started',
+      title: 'Social Platforms',
+      slug: 'social-platforms',
       collapsed: false,
       children: [
         {
           type: 'doc',
-          title: 'Installation',
-          slug: 'installation'
+          title: 'Discord Servers',
+          slug: 'discord-servers'
         },
         {
           type: 'doc',
-          title: 'Configuration',
-          slug: 'configuration'
-        },
-        {
-          type: 'doc',
-          title: 'Playground',
-          slug: 'playground'
-        },
-        {
-          type: 'doc',
-          title: 'TypeScript Support',
-          slug: 'typescript-support'
+          title: 'Youtube Channels',
+          slug: 'youtube-channels'
         },
       ]
     },

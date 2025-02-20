@@ -1,3 +1,5 @@
+'use client'
+
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Bold } from "@/components/content/Bold";
 import { Code } from "@/components/content/Code";
@@ -20,6 +22,7 @@ export default async function Page() {
       return new Date().toISOString();
     }
   };
+
 
   const lastModified = await getLastModifiedDate();
 
