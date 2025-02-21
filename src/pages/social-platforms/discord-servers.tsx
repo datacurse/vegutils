@@ -4,8 +4,8 @@ import React, { useEffect } from 'react'
 import { useSnapshot } from 'valtio'
 import Papa from 'papaparse'
 import { cn } from '@udecode/cn'
-import { discordServersStore } from '@/discordServersStore'
 import * as Switch from '@radix-ui/react-switch';
+import { discordServersStore } from '@/stores/discordServersStore'
 
 
 // Types

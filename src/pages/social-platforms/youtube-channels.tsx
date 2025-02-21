@@ -1,8 +1,7 @@
 'use client'
 
 import React, { useEffect } from 'react'
-import { proxy, useSnapshot } from 'valtio'
-import Papa from 'papaparse'
+import { useSnapshot } from 'valtio'
 import { cn } from '@udecode/cn'
 import * as Switch from '@radix-ui/react-switch';
 import { YoutubeChannel, youtubeChannelsStore } from '@/stores/youtubeChannelsStore'
@@ -11,30 +10,8 @@ export default function YoutubeChannels() {
   const snap = useSnapshot(youtubeChannelsStore)
 
   useEffect(() => {
-    Papa.parse('/csv/youtube-channels.csv', {
-      download: true,
-      header: true,
-      complete: (results) => {
-        const parsedServers = (results.data as YoutubeChannel[])
-          .map((row) => ({
-            id: row.id ?? '',
-            title: row.title ?? '',
-            description: row.description ?? '',
-            handle: row.handle ?? '',
-            publishedAt: row.publishedAt ?? '',
-            thumbnailUrl: row.thumbnailUrl ?? '',
-            country: row.country ?? '',
-            viewCount: Number(row.viewCount) ?? 0,
-            subscriberCount: Number(row.subscriberCount) ?? 0,
-            videoCount: Number(row.videoCount) ?? 0
-          }))
-        youtubeChannelsStore.channels = parsedServers
-        youtubeChannelsStore.applyFiltersAndSorting()
-      },
-    })
-  }, [])
-
-  console.log(snap.channels.filter(channel => channel.thumbnailUrl))
+    youtubeChannelsStore.loadChannels();
+  }, []);
 
   return (
     <div className="container py-6">

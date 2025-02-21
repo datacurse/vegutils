@@ -52,6 +52,11 @@ export const sidebarStore = proxy<{ items: SidebarItem[] }>({
           title: 'Youtube Channels',
           slug: 'youtube-channels'
         },
+        {
+          type: 'doc',
+          title: 'Supplements Shop',
+          slug: 'supplements-shop'
+        },
       ]
     },
     {

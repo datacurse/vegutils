@@ -1,3 +1,4 @@
+import Papa from "papaparse";
 import { proxy } from "valtio";
 
 export interface YoutubeChannel {
@@ -21,6 +22,8 @@ interface YoutubeChannelsStore {
   sortKey: 'title' | 'subscriberCount';
   isDescending: boolean;
   isAndMode: boolean;
+  isLoading: boolean;
+  loadChannels: () => Promise<void>;
   setSearchQuery: (query: string) => void;
   toggleFilter: (filter: string) => void;
   setSortKey: (key: 'name' | 'members') => void;
@@ -38,6 +41,37 @@ export const youtubeChannelsStore = proxy<YoutubeChannelsStore>({
   sortKey: 'title',
   isDescending: false,
   isAndMode: false,
+  isLoading: false,
+
+  async loadChannels() {
+    this.isLoading = true;
+    try {
+      const response = await fetch('/csv/youtube-channels.csv');
+      const csvText = await response.text();
+      Papa.parse(csvText, {
+        header: true,
+        complete: (results) => {
+          const parsedChannels = (results.data as YoutubeChannel[]).map((row) => ({
+            id: row.id ?? '',
+            title: row.title ?? '',
+            description: row.description ?? '',
+            handle: row.handle ?? '',
+            publishedAt: row.publishedAt ?? '',
+            thumbnailUrl: row.thumbnailUrl ?? '',
+            country: row.country ?? '',
+            viewCount: Number(row.viewCount) ?? 0,
+            subscriberCount: Number(row.subscriberCount) ?? 0,
+            videoCount: Number(row.videoCount) ?? 0,
+          }));
+          this.channels = parsedChannels;
+          this.applyFiltersAndSorting();
+          this.isLoading = false;
+        },
+      });
+    } catch (error) {
+      this.isLoading = false;
+    }
+  },
 
   setSearchQuery(query) {
     this.searchQuery = query;
