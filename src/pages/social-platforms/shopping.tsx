@@ -20,7 +20,7 @@ const storeTypeIcons = {
   marketplace: <FaGlobe className="text-gray-600" />,
 };
 
-export default function Stores() {
+export default function Shopping() {
   const snap = useSnapshot(storesStore);
 
   // Load store data on mount
@@ -45,9 +45,9 @@ export default function Stores() {
       <section className="space-y-4">
         <div className="flex justify-between items-center">
           <div className="flex items-end gap-2">
-            <h1 className="text-2xl font-bold">Stores</h1>
+            <h1 className="text-2xl font-bold">Shops</h1>
             <span className="text-gray-600">
-              {snap.filteredStores.length} stores
+              {snap.filteredStores.length} shops
             </span>
           </div>
           <div className="flex items-center gap-4">
@@ -122,9 +122,6 @@ export default function Stores() {
           >
             <div className="flex-1">
               <h2 className="text-xl font-semibold text-gray-900">{store.name}</h2>
-              <p className="mt-1 text-gray-600">
-                {store.country.toUpperCase()} - {store.store_type}
-              </p>
               <div className="mt-2 flex flex-wrap gap-1">
                 {store.tags.map((tag, tagIndex) => (
                   <span

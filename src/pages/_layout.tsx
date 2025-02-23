@@ -2,7 +2,6 @@ import '@/styles.css';
 
 import type { ReactNode } from 'react';
 
-import { Footer } from '@/components/footer';
 import { Header } from '@/components/Header';
 import { Sidebar } from '@/components/sidebar';
 
@@ -23,8 +22,6 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           {children}
         </main>
       </div>
-
-      <Footer />
     </div>
   );
 }

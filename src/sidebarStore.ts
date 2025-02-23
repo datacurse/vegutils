@@ -54,8 +54,8 @@ export const sidebarStore = proxy<{ items: SidebarItem[] }>({
         },
         {
           type: 'doc',
-          title: 'Stores',
-          slug: 'stores'
+          title: 'Shopping',
+          slug: 'shopping'
         },
       ]
     },
