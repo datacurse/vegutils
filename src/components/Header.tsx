@@ -1,3 +1,5 @@
+import Hamburger from "./hamburger";
+
 export const Header = () => {
   return (
     <div className='border-b-[1px] border-gray-200 w-full'>
@@ -10,6 +12,9 @@ export const Header = () => {
           <div>Contact</div>
           <div>About</div>
           <div>Github</div>
+          <div className="block lg:hidden">
+            <Hamburger />
+          </div>
         </div>
       </div>
     </div>
