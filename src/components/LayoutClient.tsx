@@ -17,10 +17,10 @@ export const LayoutClient = ({ children }: { children: ReactNode }) => {
       <Header />
       <div className="border-b-[1px] border-border" />
       <div className="flex flex-row items-stretch">
-        <div className='hw-[300px] min-w-[300px] p-2 hidden lg:block'>
+        <div className='hw-[300px] min-w-[300px] p-2 hidden md:block'>
           <Sidebar />
         </div>
-        <div className="border-r-[1px] border-border hidden lg:block" />
+        <div className="border-r-[1px] border-border hidden md:block" />
         {snap.hamburger ? (
           <HamburgerPopup />
         ) : (

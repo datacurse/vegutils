@@ -112,7 +112,7 @@ function CategoryItem({ item, path, slugPath = [], currentPath }: {
           <div>{item.title}</div>
         </Link>
         <div
-          className='px-3 py-[6px] hover:bg-bg duration-200 rounded-md cursor-pointer'
+          className='px-3 py-[6px] hover:bg-bt duration-200 rounded-md cursor-pointer'
           onClick={toggleCollapse}
         >
           <div className='h-5 w-5 flex items-center justify-center'>
