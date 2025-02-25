@@ -21,9 +21,9 @@ export default function DiscordServers() {
   }, []);
 
   return (
-    <div className="py-6">
+    <div className="">
       {/* Filters and Sorting Section */}
-      <section className="space-y-4">
+      <div className="space-y-4">
         <div className="flex justify-between items-center">
           <div className="flex items-end gap-2">
             <div className="text-2xl font-bold">Discord Servers</div>
@@ -39,17 +39,10 @@ export default function DiscordServers() {
             placeholder="Search by name or description"
             value={snap.searchQuery}
             onChange={(e) => discordServersStore.setSearchQuery(e.target.value)}
-            className="px-3 w-64 py-1 border border-border rounded"
+            className="px-3 w-64 py-1 border border-border rounded outline-border"
           />
           <div className='flex flex-row items-center space-x-2'>
             <div className="">Sort by</div>
-            <div
-              className={cn('border border-border px-2 py-1 rounded-md hover:bg-bt-hover cursor-pointer select-none',
-                snap.sortKey === 'name' && 'bg-bt')}
-              onClick={() => discordServersStore.setSortKey('name')}
-            >
-              Name
-            </div>
             <div
               className={cn('border border-border px-2 py-1 rounded-md hover:bg-bt-hover cursor-pointer select-none',
                 snap.sortKey === 'members' && 'bg-bt')}
@@ -57,16 +50,23 @@ export default function DiscordServers() {
             >
               Members
             </div>
+            <div
+              className={cn('border border-border px-2 py-1 rounded-md hover:bg-bt-hover cursor-pointer select-none',
+                snap.sortKey === 'name' && 'bg-bt')}
+              onClick={() => discordServersStore.setSortKey('name')}
+            >
+              Name
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Servers Grid */}
-      <section className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <section className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {snap.filteredServers.map((server: DiscordServer, index: number) => (
           <div
             key={index}
-            className="border border-border rounded-lg p-4 transition-shadow flex flex-col h-full"
+            className="border border-border rounded-lg p-4 transition-shadow flex flex-col h-full bg-card"
           >
             <div className="flex-1">
               <div className="flex items-center gap-4">
@@ -90,12 +90,12 @@ export default function DiscordServers() {
                   {server.members.toLocaleString()} members
                 </div>
                 <div className="flex gap-3">
-                  <button
-                    className="text-text-green hover:underline"
+                  <div
+                    className="text-text-green hover:underline cursor-pointer"
                     onClick={() => navigator.clipboard.writeText(server.inviteLink)}
                   >
                     Copy
-                  </button>
+                  </div>
                   <a
                     href={server.inviteLink}
                     target="_blank"

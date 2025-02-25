@@ -8,11 +8,11 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   const data = await getData();
 
   return (
-    <>
+    <div className='h-full'>
       <meta name="description" content={data.description} />
       <link rel="icon" type="image/png" href={data.icon} />
       <LayoutClient>{children}</LayoutClient>
-    </>
+    </div>
   );
 }
 

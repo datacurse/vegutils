@@ -9,6 +9,9 @@ layer(base);
   --color-text-accent: #359aba;
   --color-text-accent-muted: #205c70;
 
+  --color-bg: #ffffff;
+  --color-card: #ffffff;
+
   --color-bt: #e8e8ec;
   --color-bt-hover: #f0f0f3;
 
@@ -32,7 +35,28 @@ layer(base);
 
 /* Dark theme variables override when .dark class is added to html or body */
 .dark {
+  --color-bg: #111113;
+  --color-text: #edeef0;
+  --color-border: #363a3f;
 
+  --color-card: #18191b;
+
+  --color-bt: #272a2d;
+  --color-bt-hover: #212225;
+
+  --color-text-blue: #70b8ff;
+  --color-bt-blue: #0d2847;
+  --color-bt-blue-hover: #003362;
+
+  --color-text-green: #3dd68c;
+  --color-bt-green: #132d21;
+
+
+}
+
+/* Set default text color and line height for all elements */
+html, body {
+  color: var(--color-text);
 }
 
 /* Custom scrollbar styles */

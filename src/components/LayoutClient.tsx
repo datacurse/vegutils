@@ -13,17 +13,18 @@ export const LayoutClient = ({ children }: { children: ReactNode }) => {
   const snap = useSnapshot(store);
 
   return (
-    <div className="font-['Nunito']">
+    <div className="font-['Nunito'] bg-bg text-text h-full">
       <Header />
+      <div className="border-b-[1px] border-border" />
       <div className="flex flex-row items-stretch">
         <div className='hw-[300px] min-w-[300px] p-2 hidden lg:block'>
           <Sidebar />
         </div>
-        <div className="w-[1px] bg-gray-200" />
+        <div className="border-r-[1px] border-border hidden lg:block" />
         {snap.hamburger ? (
           <HamburgerPopup />
         ) : (
-          <main className="p-4">{children}</main>
+          <main className="p-4 h-full">{children}</main>
         )}
       </div>
     </div>

@@ -26,7 +26,7 @@ export const discordServersStore = proxy<DiscordServersStore>({
   servers: [],
   filteredServers: [],
   searchQuery: '',
-  sortKey: 'name', // Default to 'name'
+  sortKey: 'members',
   isLoading: false,
 
   setSearchQuery(query) {

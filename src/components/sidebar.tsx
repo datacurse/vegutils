@@ -11,7 +11,7 @@ export function Sidebar() {
   const router = useRouter();
 
   return (
-    <div className='flex flex-col '>
+    <div className='flex flex-col h-full'>
       {snapshot.items.map((item, idx) => (
         <SidebarItemRenderer
           key={idx}
