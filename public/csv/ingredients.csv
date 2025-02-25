@@ -1,0 +1,331 @@
+code,ingredient,category,vegan,certainty,reason
+e100,curcumin,colour,yes,certain,derived from turmeric (plant)
+e101(i),riboflavin,colour,yes,uncertain,"typically from microbial fermentation, but can be animal-derived"
+e101(ii),riboflavin-5'-phosphate,colour,yes,uncertain,"derived from riboflavin, typically microbial but source varies"
+e102,tartrazine,colour,yes,certain,synthetic dye
+e104,quinoline yellow,colour,yes,certain,synthetic dye
+e110,"sunset yellow fcf, orange yellow s",colour,yes,certain,synthetic dye
+e1103,invertase,enzyme,maybe,uncertain,can be from yeast (vegan) or animal sources
+e1105,lysozyme,preservative,no,certain,derived from egg whites
+e120,"cochineal, carminic acid, carmines",colour,no,certain,derived from insects
+e1200,polydextrose,bulking agent,yes,certain,synthetic polymer
+e1201,polyvinylpyrrolidone,stabiliser,yes,certain,synthetic
+e1202,polyvinylpolypyrrolidone,stabiliser,yes,certain,synthetic
+e1203,polyvinyl alcohol,stabiliser,yes,certain,synthetic
+e1204,pullulan,thickener,yes,certain,produced by fungal fermentation of starch
+e1205,basic methacrylate copolymer,stabiliser,yes,certain,synthetic
+e1206,neutral methacrylate copolymer,stabiliser,yes,certain,synthetic
+e1207,anionic methacrylate copolymer,stabiliser,yes,certain,synthetic
+e1208,polyvinylpyrrolidone-vinyl acetate copolymer,stabiliser,yes,certain,synthetic
+e1209,polyvinyl alcohol-polyethylene glycol-graft- co-polymer,stabiliser,yes,certain,synthetic
+e122,"azorubine, carmoisine",colour,yes,certain,synthetic dye
+e123,amaranth,colour,yes,certain,synthetic dye
+e124,"ponceau 4r, cochineal red a",colour,yes,certain,synthetic dye
+e127,erythrosine,colour,yes,certain,synthetic dye
+e129,allura red ac,colour,yes,certain,synthetic dye
+e131,patent blue v,colour,yes,certain,synthetic dye
+e132,"indigotine, indigo carmine",colour,yes,certain,synthetic dye
+e133,brilliant blue fcf,colour,yes,certain,synthetic dye
+e140,chlorophylls and chlorophyllins,colour,yes,certain,derived from plants
+e1404,oxidised starch,thickener,yes,certain,derived from plant starch
+e141,copper complexes of chlorophyll and chlorophyllins,colour,yes,certain,plant-derived with mineral copper
+e1410,monostarch phosphate,thickener,yes,certain,modified plant starch
+e1412,distarch phosphate,thickener,yes,certain,modified plant starch
+e1413,phosphated distarch phosphate,thickener,yes,certain,modified plant starch
+e1414,acetylated distarch phosphate,thickener,yes,certain,modified plant starch
+e142,green s,colour,yes,certain,synthetic dye
+e1420,acetylated starch,thickener,yes,certain,modified plant starch
+e1422,acetylated distarch adipate,thickener,yes,certain,modified plant starch
+e1440,hydroxyl propyl starch,thickener,yes,certain,modified plant starch
+e1442,hydroxy propyl distarch phosphate,thickener,yes,certain,modified plant starch
+e1450,starch sodium octenyl succinate,thickener,yes,certain,modified plant starch
+e1451,acetylated oxidised starch,thickener,yes,certain,modified plant starch
+e1452,starch aluminium octenyl succinate,thickener,yes,certain,modified plant starch with mineral
+e1505,triethyl citrate,stabiliser,yes,certain,synthetic
+e150a,plain caramel,colour,yes,certain,derived from caramelized sugar (plant)
+e150b,caustic sulphite caramel,colour,yes,certain,derived from sugar (plant)
+e150c,ammonia caramel,colour,yes,certain,derived from sugar (plant)
+e150d,sulphite ammonia caramel,colour,yes,certain,derived from sugar (plant)
+e151,"brilliant black bn, black pn",colour,yes,certain,synthetic dye
+e1517,glyceryl diacetate (diacetin),humectant,maybe,uncertain,glycerol can be from plant or animal fats
+e1518,"glyceryl triacetate, triacetin",humectant,maybe,uncertain,glycerol can be from plant or animal fats
+e1519,benzyl alcohol,carrier,yes,certain,synthetic
+e1520,"propan-1,2-diol, propylene glycol",humectant,yes,certain,synthetic
+e1521,polyethylene glycol,carrier,yes,certain,synthetic
+e153,vegetable carbon,colour,yes,certain,derived from burnt vegetable matter
+e160a,carotenes,colour,yes,certain,derived from plants
+e160b(i),"annatto, bixin",colour,yes,certain,derived from achiote seeds (plant)
+e160b(ii),"annatto, norbixin",colour,yes,certain,derived from achiote seeds (plant)
+e160c,"paprika extract, capsanthian, capsorubin",colour,yes,certain,derived from paprika (plant)
+e160d,lycopene,colour,yes,certain,derived from tomatoes (plant)
+e160e,beta-apo-8'-carotenal (c30),colour,yes,certain,typically synthetic as food additive
+e161b,lutein,colour,yes,certain,derived from marigold flowers (plant)
+e161g,canthaxanthin,colour,maybe,uncertain,can be synthetic or from animal sources
+e162,"beetroot red, betanin",colour,yes,certain,derived from beetroot (plant)
+e163,anthocyanins,colour,yes,certain,derived from fruits and vegetables (plant)
+e170,calcium carbonate,colour,maybe,uncertain,"typically from limestone (mineral), but can be from oyster shells"
+e171,titanium dioxide,colour,yes,certain,mineral source
+e172,iron oxides and hydroxides,colour,yes,certain,mineral source
+e173,aluminium,colour,yes,certain,metal (mineral)
+e174,silver,colour,yes,certain,metal (mineral)
+e175,gold,colour,yes,certain,metal (mineral)
+e180,litholrubine bk,colour,yes,certain,synthetic dye
+e200,sorbic acid,preservative,yes,certain,typically synthetic
+e202,potassium sorbate,preservative,yes,certain,synthetic from sorbic acid
+e210,benzoic acid,preservative,yes,certain,typically synthetic
+e211,sodium benzoate,preservative,yes,certain,synthetic
+e212,potassium benzoate,preservative,yes,certain,synthetic
+e213,calcium benzoate,preservative,yes,certain,synthetic
+e214,ethyl p-hydroxybenzoate,preservative,yes,certain,synthetic
+e215,sodium ethyl p-hydroxybenzoate,preservative,yes,certain,synthetic
+e218,methyl p-hydroxybenzoate,preservative,yes,certain,synthetic
+e219,sodium methyl p-hydroxybenzoate,preservative,yes,certain,synthetic
+e220,sulphur dioxide,preservative,yes,certain,inorganic compound
+e221,sodium sulphite,preservative,yes,certain,inorganic compound
+e222,sodium hydrogen sulphite,preservative,yes,certain,inorganic compound
+e223,sodium metabisulphite,preservative,yes,certain,inorganic compound
+e224,potassium metabisulphite,preservative,yes,certain,inorganic compound
+e226,calcium sulphite,preservative,yes,certain,inorganic compound
+e227,calcium hydrogen sulphite,preservative,yes,certain,inorganic compound
+e228,potassium hydrogen sulphite,preservative,yes,certain,inorganic compound
+e234,nisin,preservative,yes,certain,produced by bacterial fermentation
+e235,natamycin,preservative,yes,certain,produced by bacterial fermentation
+e239,hexamethylene tetramine,preservative,yes,certain,synthetic
+e242,dimethyl dicarbonate,preservative,yes,certain,synthetic
+e243,ethyl lauroyl arginate,preservative,yes,certain,synthetic
+e249,potassium nitrite,preservative,yes,certain,inorganic compound
+e250,sodium nitrite,preservative,yes,certain,inorganic compound
+e251,sodium nitrate,preservative,yes,certain,inorganic compound
+e252,potassium nitrate,preservative,yes,certain,inorganic compound
+e260,acetic acid,acidulant,yes,certain,from fermentation or synthetic
+e261,potassium acetate,acidulant,yes,certain,from acetic acid (vegan)
+e262,sodium acetate,acidulant,yes,certain,from acetic acid (vegan)
+e263,calcium acetate,acidulant,yes,certain,from acetic acid (vegan)
+e270,lactic acid,acidulant,maybe,uncertain,"typically from bacterial fermentation, but can be from dairy"
+e280,propionic acid,preservative,yes,certain,typically synthetic or from fermentation
+e281,sodium propionate,preservative,yes,certain,synthetic from propionic acid
+e282,calcium propionate,preservative,yes,certain,synthetic from propionic acid
+e283,potassium propionate,preservative,yes,certain,synthetic from propionic acid
+e284,boric acid,preservative,yes,certain,inorganic compound
+e285,"sodium tetraborate, borax",preservative,yes,certain,inorganic compound
+e290,carbon dioxide,carbonating agent,yes,certain,inorganic gas
+e296,malic acid,acidulant,yes,certain,from apples or synthetic
+e297,fumaric acid,acidulant,yes,certain,synthetic
+e300,ascorbic acid,antioxidant,yes,certain,typically synthetic or from plants
+e301,sodium ascorbate,antioxidant,yes,certain,from ascorbic acid (vegan)
+e302,calcium ascorbate,antioxidant,yes,certain,from ascorbic acid (vegan)
+e304,fatty acid esters of ascorbic acid,antioxidant,maybe,uncertain,fatty acids can be from plant or animal sources
+e306,tocopherols,antioxidant,yes,certain,derived from plants
+e307,alpha-tocopherol,antioxidant,yes,certain,derived from plants or synthetic
+e308,gamma-tocopherol,antioxidant,yes,certain,derived from plants
+e309,delta-tocopherol,antioxidant,yes,certain,derived from plants
+e310,propyl gallate,antioxidant,yes,certain,synthetic
+e315,erythorbic acid,antioxidant,yes,certain,synthetic
+e316,sodium erythorbate,antioxidant,yes,certain,synthetic from erythorbic acid
+e319,tertiary-butyl hydroquinone (tbhq),antioxidant,yes,certain,synthetic
+e320,butylated hydroxyanisole (bha),antioxidant,yes,certain,synthetic
+e321,butylated hydroxytoluene (bht),antioxidant,yes,certain,synthetic
+e322,lecithins,emulsifier,maybe,uncertain,"typically from soybeans, but can be from eggs"
+e325,sodium lactate,acidulant,maybe,uncertain,from lactic acid (vegan or dairy)
+e326,potassium lactate,acidulant,maybe,uncertain,from lactic acid (vegan or dairy)
+e327,calcium lactate,acidulant,maybe,uncertain,from lactic acid (vegan or dairy)
+e330,citric acid,acidulant,yes,certain,from microbial fermentation of sugar
+e331,sodium citrates,acidulant,yes,certain,from citric acid (vegan)
+e332,potassium citrates,acidulant,yes,certain,from citric acid (vegan)
+e333,calcium citrates,acidulant,yes,certain,from citric acid (vegan)
+e334,tartaric acid (l-(+)),acidulant,yes,certain,from grapes or synthetic
+e335,sodium tartrates,acidulant,yes,certain,from tartaric acid (vegan)
+e336,potassium tartrates,acidulant,yes,certain,from tartaric acid (vegan)
+e337,sodium potassium tartrate,acidulant,yes,certain,from tartaric acid (vegan)
+e338,phosphoric acid,acidulant,yes,certain,inorganic compound
+e339,sodium phosphates,acidulant,yes,certain,from phosphoric acid (vegan)
+e340,potassium phosphates,acidulant,yes,certain,from phosphoric acid (vegan)
+e341,calcium phosphates,acidulant,yes,certain,from phosphoric acid (vegan)
+e342,,,,,
+e343,magnesium phosphates,acidulant,yes,certain,from phosphoric acid (vegan)
+e350,sodium malates,acidulant,yes,certain,from malic acid (vegan)
+e351,potassium malate,acidulant,yes,certain,from malic acid (vegan)
+e352,calcium malates,acidulant,yes,certain,from malic acid (vegan)
+e353,metatartaric acid,acidulant,yes,certain,from tartaric acid (vegan)
+e354,calcium tartrate,acidulant,yes,certain,from tartaric acid (vegan)
+e355,adipic acid,acidulant,yes,certain,synthetic
+e356,sodium adipate,acidulant,yes,certain,from adipic acid (vegan)
+e357,potassium adipate,acidulant,yes,certain,from adipic acid (vegan)
+e363,succinic acid,acidulant,yes,certain,from fermentation or synthetic
+e380,triammonium citrate,acidulant,yes,certain,from citric acid (vegan)
+e385,"calcium disodium ethylene diamine tetra-acetate, calcium disodium edta",sequestrant,yes,certain,synthetic
+e392,extracts of rosemary,antioxidant,yes,certain,derived from rosemary (plant)
+e400,alginic acid,thickener,yes,certain,derived from seaweed
+e401,sodium alginate,thickener,yes,certain,from alginic acid (vegan)
+e402,potassium alginate,thickener,yes,certain,from alginic acid (vegan)
+e403,ammonium alginate,thickener,yes,certain,from alginic acid (vegan)
+e404,calcium alginate,thickener,yes,certain,from alginic acid (vegan)
+e405,"propane-1,2-diol alginate",thickener,yes,certain,from alginic acid and synthetic propylene glycol
+e406,agar,thickener,yes,certain,derived from seaweed
+e407,carrageenan,thickener,yes,certain,derived from seaweed
+e407a,processed eucheuma seaweed,thickener,yes,certain,derived from seaweed
+e410,"locust bean gum, carob gum",thickener,yes,certain,derived from carob tree (plant)
+e412,guar gum,thickener,yes,certain,derived from guar beans (plant)
+e413,tragacanth,thickener,yes,certain,derived from shrubs (plant)
+e414,"acacia gum, gum arabic",thickener,yes,certain,derived from acacia tree (plant)
+e415,xanthan gum,thickener,yes,certain,from bacterial fermentation
+e416,karaya gum,thickener,yes,certain,derived from trees (plant)
+e417,tara gum,thickener,yes,certain,derived from tara tree (plant)
+e418,gellan gum,thickener,yes,certain,from bacterial fermentation
+e420(i),sorbitol,sweetener,yes,certain,from glucose (plant-derived)
+e420(ii),sorbitol syrup,sweetener,yes,certain,from glucose (plant-derived)
+e421,mannitol,sweetener,yes,certain,from seaweed or synthetic
+e422,glycerol,humectant,maybe,uncertain,can be from plant or animal fats
+e423,octenyl succinic acid modified gum arabic,thickener,yes,certain,from gum arabic (plant)
+e425,konjac,thickener,yes,certain,derived from konjac plant
+e426,soybean hemicellulose,thickener,yes,certain,derived from soybeans (plant)
+e427,cassia gum,thickener,yes,certain,derived from cassia seeds (plant)
+e432,"polyoxyethylene sorbitan monolaurate, polysorbate 20",emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e433,"polyoxyethylene sorbitan mono-oleate, polysorbate 80",emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e434,"polyoxyethylene sorbitan monopalmitate, polysorbate 40",emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e435,"polyoxyethylene sorbitan monostearate, polysorbate 60",emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e436,"polyoxyethylene sorbitan tristearate, polysorbate 65",emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e440,pectins,thickener,yes,certain,derived from fruits (plant)
+e442,ammonium phosphatides,emulsifier,maybe,uncertain,phosphatides can be from soybeans or eggs
+e444,sucrose acetate isobutyrate,stabiliser,yes,certain,synthetic
+e445,glycerol esters of wood rosins,emulsifier,maybe,uncertain,glycerol can be from plant or animal fats
+e450,diphosphates,raising agent,yes,certain,inorganic compound
+e451,triphosphates,raising agent,yes,certain,inorganic compound
+e452,polyphosphates,stabiliser,yes,certain,inorganic compound
+e459,beta-cyclodextrin,stabiliser,yes,certain,from starch (plant)
+e460,cellulose,thickener,yes,certain,derived from plants
+e461,methyl cellulose,thickener,yes,certain,from cellulose (plant)
+e462,ethyl cellulose,thickener,yes,certain,from cellulose (plant)
+e463,hydroxypropyl cellulose,thickener,yes,certain,from cellulose (plant)
+e464,hydroxypropyl methyl cellulose,thickener,yes,certain,from cellulose (plant)
+e465,ethyl methyl cellulose,thickener,yes,certain,from cellulose (plant)
+e466,carboxy methyl cellulose,thickener,yes,certain,from cellulose (plant)
+e468,crosslinked sodium carboxy methyl cellulose,thickener,yes,certain,from cellulose (plant)
+e469,enzymatically hydrolysed carboxy methyl cellulose,thickener,yes,certain,from cellulose (plant)
+e470a,"sodium, potassium and calcium salts of fatty acids",emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e470b,magnesium salts of fatty acids,emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e471,mono- and diglycerides of fatty acids,emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e472a,acetic acid esters of mono- and diglycerides of fatty acids,emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e472b,lactic acid esters of mono- and diglycerides of fatty acids,emulsifier,maybe,uncertain,fatty acids and lactic acid can vary in source
+e472c,citric acid esters of mono- and diglycerides of fatty acids,emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e472d,tartaric acid esters of mono- and diglycerides of fatty acids,emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e472e,mono- and diacetyltartaric acid esters of monoand diglycerides of fatty acids,emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e472f,mixed acetic and tartaric acid esters of monoand diglycerides of fatty acids,emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e473,sucrose esters of fatty acids,emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e474,sucroglycerides,emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e475,polyglycerol esters of fatty acids,emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e476,polyglycerol polyricinoleate,emulsifier,yes,certain,typically from castor oil (plant)
+e477,"propane-1,2-diol esters of fatty acids",emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e479b,thermally oxidised soya bean oil interacted with mono and diglycerides of fatty acids,emulsifier,maybe,uncertain,"soybean oil is vegan, but fatty acids can vary"
+e481,sodium stearoyl-2-lactylate,emulsifier,maybe,uncertain,stearic and lactic acids can be from plant or animal sources
+e482,calcium stearoyl-2-lactylate,emulsifier,maybe,uncertain,stearic and lactic acids can be from plant or animal sources
+e483,stearyl tartrate,emulsifier,maybe,uncertain,stearic acid can be from plant or animal sources
+e491,sorbitan monostearate,emulsifier,maybe,uncertain,stearic acid can be from plant or animal sources
+e492,sorbitan tristearate,emulsifier,maybe,uncertain,stearic acid can be from plant or animal sources
+e493,sorbitan monolaurate,emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e494,sorbitan monooleate,emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e495,sorbitan monopalmitate,emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e499,stigmasterol-rich plant sterols,stabiliser,yes,certain,derived from plants
+e500,sodium carbonates,raising agent,yes,certain,inorganic compound
+e501,potassium carbonates,raising agent,yes,certain,inorganic compound
+e503,ammonium carbonates,raising agent,yes,certain,inorganic compound
+e504,magnesium carbonates,anticaking agent,yes,certain,inorganic compound
+e507,hydrochloric acid,acidulant,yes,certain,inorganic compound
+e508,potassium chloride,seasoning,yes,certain,inorganic compound
+e509,calcium chloride,firming agent,yes,certain,inorganic compound
+e511,magnesium chloride,firming agent,yes,certain,inorganic compound
+e512,stannous chloride,antioxidant,yes,certain,inorganic compound
+e513,sulphuric acid,acidulant,yes,certain,inorganic compound
+e514,sodium sulphates,stabiliser,yes,certain,inorganic compound
+e515,potassium sulphates,stabiliser,yes,certain,inorganic compound
+e516,calcium sulphate,firming agent,yes,certain,inorganic compound
+e517,ammonium sulphate,stabiliser,yes,certain,inorganic compound
+e520,aluminium sulphate,firming agent,yes,certain,inorganic compound
+e521,aluminium sodium sulphate,firming agent,yes,certain,inorganic compound
+e522,aluminium potassium sulphate,firming agent,yes,certain,inorganic compound
+e523,aluminium ammonium sulphate,firming agent,yes,certain,inorganic compound
+e524,sodium hydroxide,acidity regulator,yes,certain,inorganic compound
+e525,potassium hydroxide,acidity regulator,yes,certain,inorganic compound
+e526,calcium hydroxide,acidity regulator,yes,certain,inorganic compound
+e527,ammonium hydroxide,acidity regulator,yes,certain,inorganic compound
+e528,magnesium hydroxide,acidity regulator,yes,certain,inorganic compound
+e529,calcium oxide,firming agent,yes,certain,inorganic compound
+e530,magnesium oxide,anticaking agent,yes,certain,inorganic compound
+e535,sodium ferrocyanide,anticaking agent,yes,certain,inorganic compound
+e536,potassium ferrocyanide,anticaking agent,yes,certain,inorganic compound
+e538,calcium ferrocyanide,anticaking agent,yes,certain,inorganic compound
+e541,sodium aluminium phosphate,raising agent,yes,certain,inorganic compound
+e551,silicon dioxide,anticaking agent,yes,certain,mineral source
+e552,calcium silicate,anticaking agent,yes,certain,mineral source
+e553a(i),magnesium silicate,anticaking agent,yes,certain,mineral source
+e553a(ii),magnesium trisilicate,anticaking agent,yes,certain,mineral source
+e553b,talc,anticaking agent,yes,certain,mineral source
+e554,sodium aluminium silicate,anticaking agent,yes,certain,mineral source
+e555,potassium aluminium silicate,anticaking agent,yes,certain,mineral source
+e570,fatty acids,emulsifier,maybe,uncertain,fatty acids can be from plant or animal sources
+e574,gluconic acid,acidulant,yes,certain,from glucose (plant-derived)
+e575,glucono delta-lactone,acidulant,yes,certain,from gluconic acid (vegan)
+e576,sodium gluconate,sequestrant,yes,certain,from gluconic acid (vegan)
+e577,potassium gluconate,sequestrant,yes,certain,from gluconic acid (vegan)
+e578,calcium gluconate,firming agent,yes,certain,from gluconic acid (vegan)
+e579,ferrous gluconate,colour retention,yes,certain,from gluconic acid (vegan)
+e585,ferrous lactate,colour retention,maybe,uncertain,lactic acid can be from vegan or dairy sources
+e586,4-hexylresorcinol,antioxidant,yes,certain,synthetic
+e620,glutamic acid,flavour enhancer,yes,certain,typically from bacterial fermentation
+e621,monosodium glutamate,flavour enhancer,yes,certain,from glutamic acid (vegan)
+e622,monopotassium glutamate,flavour enhancer,yes,certain,from glutamic acid (vegan)
+e623,calcium diglutamate,flavour enhancer,yes,certain,from glutamic acid (vegan)
+e624,monoammonium glutamate,flavour enhancer,yes,certain,from glutamic acid (vegan)
+e625,magnesium diglutamate,flavour enhancer,yes,certain,from glutamic acid (vegan)
+e626,guanylic acid,flavour enhancer,maybe,uncertain,can be from yeast (vegan) or fish
+e627,disodium guanylate,flavour enhancer,maybe,uncertain,"typically from yeast, but can be from fish"
+e628,dipotassium guanylate,flavour enhancer,maybe,uncertain,"typically from yeast, but can be from fish"
+e629,calcium guanylate,flavour enhancer,maybe,uncertain,"typically from yeast, but can be from fish"
+e630,lnosinic acid,flavour enhancer,maybe,uncertain,can be from yeast or fish
+e631,disodium inosinate,flavour enhancer,maybe,uncertain,"typically from yeast, but can be from fish"
+e632,dipotassium inosinate,flavour enhancer,maybe,uncertain,"typically from yeast, but can be from fish"
+e633,calcium inosinate,flavour enhancer,maybe,uncertain,"typically from yeast, but can be from fish"
+e634,calcium 5'-ribonucleotides,flavour enhancer,maybe,uncertain,can be from yeast or animal sources
+e635,disodium 5'-ribonucleotides,flavour enhancer,maybe,uncertain,can be from yeast or animal sources
+e640,glycine and its sodium salt,flavour enhancer,maybe,uncertain,can be synthetic or from gelatin (animal)
+e641,l-leucine,flavour enhancer,maybe,uncertain,can be from fermentation or animal sources
+e650,zinc acetate,flavour enhancer,yes,certain,synthetic
+e900,dimethylpolysiloxane,anticaking agent,yes,certain,synthetic
+e901,"beeswax, white and yellow",glazing agent,no,certain,derived from bees
+e902,candelilla wax,glazing agent,yes,certain,derived from plants
+e903,carnauba wax,glazing agent,yes,certain,derived from plants
+e904,shellac,glazing agent,no,certain,derived from insects
+e905,microcrystalline wax,glazing agent,yes,certain,from petroleum (synthetic)
+e907,hydrogenated poly-1-decene,glazing agent,yes,certain,synthetic
+e914,oxidised polyethylene wax,glazing agent,yes,certain,synthetic
+e920,l-cysteine,flour treatment,maybe,uncertain,"can be synthetic or from animal sources (e.g., feathers)"
+e927b,carbamide,stabiliser,yes,certain,synthetic
+e938,argon,propellant,yes,certain,inorganic gas
+e939,helium,propellant,yes,certain,inorganic gas
+e941,nitrogen,propellant,yes,certain,inorganic gas
+e942,nitrous oxide,propellant,yes,certain,inorganic gas
+e943a,butane,propellant,yes,certain,inorganic gas
+e943b,iso-butane,propellant,yes,certain,inorganic gas
+e944,propane,propellant,yes,certain,inorganic gas
+e948,oxygen,propellant,yes,certain,inorganic gas
+e950,acesulfame k,sweetener,yes,certain,synthetic
+e951,aspartame,sweetener,yes,certain,synthetic
+e952,cyclamic acid and its na and ca salts,sweetener,yes,certain,synthetic
+e953,lsomalt,sweetener,yes,certain,from sugar (plant-derived)
+e954,"saccharin and its na, k and ca salts",sweetener,yes,certain,synthetic
+e955,sucralose,sweetener,yes,certain,synthetic
+e957,thaumatin,sweetener,yes,certain,derived from plant
+e959,neohesperidine dc,sweetener,yes,certain,derived from citrus (plant)
+e960a,steviol glycosides from stevia,sweetener,yes,certain,derived from stevia (plant)
+e960b,steviol glycosides from fermentation,sweetener,yes,certain,from microbial fermentation
+e960c,enzymatically produced steviol glycosides,sweetener,yes,certain,from enzymatic process (vegan)
+e961,neotame,sweetener,yes,certain,synthetic
+e962,salt of aspartame-acesulfame,sweetener,yes,certain,synthetic
+e964,polyglycitol syrup,sweetener,yes,certain,from sugar (plant-derived)
+e965(i),maltitol,sweetener,yes,certain,from maltose (plant-derived)
+e965(ii),maltitol syrup,sweetener,yes,certain,from maltose (plant-derived)
+e966,lactitol,sweetener,no,certain,derived from lactose (milk)
+e967,xylitol,sweetener,yes,certain,derived from plants
+e968,erythritol,sweetener,yes,certain,from fermentation of sugar
+e969,advantame,sweetener,yes,certain,synthetic
+e999,quillaia extract,foaming agent,yes,certain,derived from tree bark (plant)

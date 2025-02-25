@@ -11,7 +11,7 @@ export function Sidebar() {
   const router = useRouter();
 
   return (
-    <div className='w-[300px] p-2'>
+    <div className='w-[300px] min-w-[300px] p-2 flex flex-col space-y-1 hidden lg:block'>
       {snapshot.items.map((item, idx) => (
         <SidebarItemRenderer
           key={idx}
@@ -58,8 +58,8 @@ function DocItem({ item, slugPath, currentPath }: {
 
   return (
     <div className={cn(
-      "flex items-center hover:bg-[#f2f2f2] rounded-md h-8 pl-4",
-      isActive && 'bg-[#e6e6e6]'
+      "flex items-center hover:bg-sf rounded-md h-8 pl-4 mt-1",
+      isActive && 'bg-sf'
     )}>
       <Link to={`/${fullPath}`} className="w-full py-1">
         {item.title}
@@ -70,7 +70,7 @@ function DocItem({ item, slugPath, currentPath }: {
 
 function LinkItem({ item }: { item: Extract<SidebarItem, { type: 'link' }> }) {
   return (
-    <div className="flex items-center hover:bg-[#f2f2f2] rounded-md h-8 pl-4">
+    <div className="flex items-center hover:bg-sf rounded-md h-8 pl-4 mt-1">
       <a href={item.href} target="_blank" rel="noopener noreferrer" className="w-full py-1">
         {item.title}
       </a>
@@ -101,8 +101,8 @@ function CategoryItem({ item, path, slugPath = [], currentPath }: {
   return (
     <div>
       <div className={cn(
-        "flex items-center justify-between hover:bg-[#f2f2f2] rounded-md",
-        isActive && 'bg-[#e6e6e6]'
+        "flex items-center justify-between hover:bg-sf rounded-md mt-1",
+        isActive && 'bg-sf'
       )}>
         <Link
           to={`/${fullPath}`}
@@ -112,7 +112,7 @@ function CategoryItem({ item, path, slugPath = [], currentPath }: {
           <div>{item.title}</div>
         </Link>
         <div
-          className='px-3 py-[6px] hover:bg-[#e6e6e6] duration-200 rounded-md cursor-pointer'
+          className='px-3 py-[6px] hover:bg-sf-elevated duration-200 rounded-md cursor-pointer'
           onClick={toggleCollapse}
         >
           <div className='h-5 w-5 flex items-center justify-center'>

@@ -15,7 +15,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       <meta name="description" content={data.description} />
       <link rel="icon" type="image/png" href={data.icon} />
       <Header />
-      <div className="flex flex-row min-w-0 mx-auto items-stretch">
+      <div className="flex flex-row items-stretch">
         <Sidebar />
         <div className="w-[1px] bg-gray-200" />
         <main className="p-4">

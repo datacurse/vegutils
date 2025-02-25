@@ -4,7 +4,7 @@ import { UnorderedList } from "@/components/content/UnorderedList";
 
 export default function IsItVegan() {
   return (
-    <div className="container py-6">
+    <div className="py-6">
       is it vegan
       <UnorderedList>
         <div>https://isitvegan.net/</div>

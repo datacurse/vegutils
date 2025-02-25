@@ -14,7 +14,7 @@ export default function YoutubeChannels() {
   }, []);
 
   return (
-    <div className="container py-6">
+    <div className="py-6">
       {/* Filters and Sorting Section */}
       <section className="space-y-4">
         <div className="flex justify-between items-center">
