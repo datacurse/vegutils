@@ -4,18 +4,24 @@ layer(base);
 
 @theme {
   /* Text colors */
-  --color-text: #1d1d1d;
+  --color-text: #1c2024;
   --color-text-muted: #60646c;
   --color-text-accent: #359aba;
   --color-text-accent-muted: #205c70;
 
   --color-bt: #e8e8ec;
   --color-bt-hover: #f0f0f3;
-  --color-bt-accent: #e6f4fe;
-  --color-bt-accent-hover: #d5efff;
+
+  --color-text-blue: #0d74ce;
+  --color-bt-blue: #e6f4fe;
+  --color-bt-blue-hover: #d5efff;
+
+  --color-text-green: #218358;
+  --color-bt-green: #e6f6eb;
 
   --color-border: #d9d9e0;
   --color-border-accent: #359aba;
+
   --color-icon: #a5a5a5;
   --color-icon-accent: #359aba;
   --color-code-bg: #f2f2f2;
@@ -26,21 +32,7 @@ layer(base);
 
 /* Dark theme variables override when .dark class is added to html or body */
 .dark {
-  --color-text: #f0f0f0;
-  --color-text-muted: #a0a0a0;
-  --color-text-accent: #4dc0e0;
-  --color-text-accent-muted: #8edcf5;
-  --color-bg: #121212;
-  --color-sf: #1e1e1e;
-  --color-sf-elevated: #2d2d2d;
-  --color-border: #333333;
-  --color-border-accent: #4dc0e0;
-  --color-icon: #808080;
-  --color-icon-accent: #4dc0e0;
-  --color-code-bg: #1e1e1e;
-  --color-code-border: #333333;
-  --color-scrollbar-thumb: #444444;
-  --color-scrollbar-track: #222222;
+
 }
 
 /* Custom scrollbar styles */

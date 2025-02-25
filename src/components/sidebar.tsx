@@ -11,7 +11,7 @@ export function Sidebar() {
   const router = useRouter();
 
   return (
-    <div className='flex flex-col space-y-1'>
+    <div className='flex flex-col '>
       {snapshot.items.map((item, idx) => (
         <SidebarItemRenderer
           key={idx}
@@ -58,8 +58,8 @@ function DocItem({ item, slugPath, currentPath }: {
 
   return (
     <div className={cn(
-      "flex items-center hover:bg-bg-hover rounded-md h-8 pl-4 mt-1",
-      isActive && 'bg-bg-accent hover:bg-bg-accent-hover'
+      "flex items-center hover:bg-bt-hover rounded-md h-8 pl-4 mt-1",
+      isActive && 'bg-bt-blue hover:bg-bt-blue-hover text-text-blue'
     )}>
       <Link to={`/${fullPath}`} className="w-full py-1">
         {item.title}
@@ -101,8 +101,8 @@ function CategoryItem({ item, path, slugPath = [], currentPath }: {
   return (
     <div>
       <div className={cn(
-        "flex items-center justify-between hover:bg-bg-hover rounded-md mt-1",
-        isActive && 'bg-bg-accent hover:bg-bg-accent-hover font-medium'
+        "flex items-center justify-between hover:bg-bt-hover rounded-md mt-1",
+        isActive && 'bg-bt-blue hover:bg-bt-blue-hover text-text-blue'
       )}>
         <Link
           to={`/${fullPath}`}

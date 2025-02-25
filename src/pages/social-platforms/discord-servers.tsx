@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSnapshot } from 'valtio';
 import { cn } from '@udecode/cn';
 import { discordServersStore } from '@/stores/discordServersStore';
@@ -26,34 +26,38 @@ export default function DiscordServers() {
       <section className="space-y-4">
         <div className="flex justify-between items-center">
           <div className="flex items-end gap-2">
-            <h1 className="text-2xl font-bold">Discord Servers</h1>
-            <span className="text-gray-600">
+            <div className="text-2xl font-bold">Discord Servers</div>
+            <div className="">
               {snap.filteredServers.length} servers
-            </span>
+            </div>
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center space-x-4">
           <input
             type="text"
             placeholder="Search by name or description"
             value={snap.searchQuery}
             onChange={(e) => discordServersStore.setSearchQuery(e.target.value)}
-            className="px-3 py-1 border border-gray-300 rounded"
+            className="px-3 w-64 py-1 border border-border rounded"
           />
-          <span className="text-gray-700">Sort by</span>
-          <button
-            className={snap.sortKey === 'name' ? 'font-bold' : ''}
-            onClick={() => discordServersStore.setSortKey('name')}
-          >
-            Name
-          </button>
-          <button
-            className={snap.sortKey === 'members' ? 'font-bold' : ''}
-            onClick={() => discordServersStore.setSortKey('members')}
-          >
-            Members
-          </button>
+          <div className='flex flex-row items-center space-x-2'>
+            <div className="">Sort by</div>
+            <div
+              className={cn('border border-border px-2 py-1 rounded-md hover:bg-bt-hover cursor-pointer select-none',
+                snap.sortKey === 'name' && 'bg-bt')}
+              onClick={() => discordServersStore.setSortKey('name')}
+            >
+              Name
+            </div>
+            <div
+              className={cn('border border-border px-2 py-1 rounded-md hover:bg-bt-hover cursor-pointer select-none',
+                snap.sortKey === 'members' && 'bg-bt')}
+              onClick={() => discordServersStore.setSortKey('members')}
+            >
+              Members
+            </div>
+          </div>
         </div>
       </section>
 
@@ -71,21 +75,23 @@ export default function DiscordServers() {
                   alt={server.title}
                   className="w-16 h-16 object-cover rounded-md"
                 />
-                <h2 className="text-xl font-semibold">{server.title}</h2>
+                <div className="text-xl font-semibold">
+                  {server.title}
+                </div>
               </div>
-              <p className="mt-2 text-gray-600 line-clamp-4">
+              <div className="mt-2 line-clamp-4">
                 {server.description}
-              </p>
+              </div>
             </div>
 
             <div className="mt-4">
               <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">
+                <div className="text-sm">
                   {server.members.toLocaleString()} members
-                </span>
+                </div>
                 <div className="flex gap-3">
                   <button
-                    className="text-[#18816a] hover:underline"
+                    className="text-text-green hover:underline"
                     onClick={() => navigator.clipboard.writeText(server.inviteLink)}
                   >
                     Copy
@@ -94,7 +100,7 @@ export default function DiscordServers() {
                     href={server.inviteLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#18816a] hover:underline"
+                    className="text-text-green hover:underline"
                   >
                     Join
                   </a>
