@@ -1,4 +1,5 @@
 import Hamburger from "./hamburger";
+import ThemeToggle from "./ThemeToggle";
 
 export const Header = () => {
   return (
@@ -12,6 +13,7 @@ export const Header = () => {
           <div>Contact</div>
           <div>About</div>
           <div>Github</div>
+          <ThemeToggle />
           <div className="block lg:hidden">
             <Hamburger />
           </div>

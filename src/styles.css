@@ -33,6 +33,25 @@ layer(base);
   --color-scrollbar-track: #f6f6f6;
 }
 
+/* Dark theme variables override when .dark class is added to html or body */
+.dark {
+  --color-text: #f0f0f0;
+  --color-text-muted: #a0a0a0;
+  --color-text-accent: #4dc0e0;
+  --color-text-accent-muted: #8edcf5;
+  --color-bg: #121212;
+  --color-sf: #1e1e1e;
+  --color-sf-elevated: #2d2d2d;
+  --color-border: #333333;
+  --color-border-accent: #4dc0e0;
+  --color-icon: #808080;
+  --color-icon-accent: #4dc0e0;
+  --color-code-bg: #1e1e1e;
+  --color-code-border: #333333;
+  --color-scrollbar-thumb: #444444;
+  --color-scrollbar-track: #222222;
+}
+
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
   width: 12px;
