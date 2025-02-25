@@ -1,7 +1,9 @@
-// ThemeToggle.jsx - React component for theme toggle
 import { store } from '@/stores/store';
-import React, { useEffect } from 'react';
+import { cn } from '@udecode/cn';
+import { useEffect } from 'react';
 import { useSnapshot } from 'valtio';
+import { MdOutlineLightMode } from "react-icons/md";
+import { MdOutlineDarkMode } from "react-icons/md";
 
 export default function ThemeToggle() {
   const snap = useSnapshot(store);
@@ -18,9 +20,13 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => store.isDarkTheme = !store.isDarkTheme}
-      className="px-4 py-2 rounded-md bg-sf hover:bg-sf-elevated text-text"
+      className={cn(
+        'hover:bg-bt-hover p-2 flex items-center justify-center rounded-sm border border-border',
+      )}
     >
-      {snap.isDarkTheme ? '☀️ Light' : '🌙 Dark'}
+      {snap.isDarkTheme ?
+        <MdOutlineDarkMode size={24} />
+        : <MdOutlineLightMode size={24} />}
     </button>
   );
 };

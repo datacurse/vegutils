@@ -62,7 +62,7 @@ export default function DiscordServers() {
         {snap.filteredServers.map((server: DiscordServer, index: number) => (
           <div
             key={index}
-            className="border border-gray-100 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow flex flex-col h-full"
+            className="border border-border rounded-lg p-4 transition-shadow flex flex-col h-full"
           >
             <div className="flex-1">
               <div className="flex items-center gap-4">

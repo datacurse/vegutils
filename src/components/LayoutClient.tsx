@@ -4,10 +4,10 @@
 import '@/styles.css';
 import { useSnapshot } from 'valtio';
 import { store } from '@/stores/store';
-import { Header } from '@/components/Header';
 import { ReactNode } from 'react';
 import { Sidebar } from './sidebar';
 import HamburgerPopup from './HamburgerPopup';
+import Header from './Header';
 
 export const LayoutClient = ({ children }: { children: ReactNode }) => {
   const snap = useSnapshot(store);
