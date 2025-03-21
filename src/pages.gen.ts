@@ -15,6 +15,7 @@ type Page =
 | ({ path: '/' } & GetConfigResponse<typeof Index_getConfig>)
 | { path: '/introduction'; render: 'dynamic' }
 | { path: '/practicies/shrimp-eye-ablation'; render: 'dynamic' }
+| { path: '/practicies'; render: 'dynamic' }
 | { path: '/social-platforms/-shopping'; render: 'dynamic' }
 | { path: '/social-platforms/discord-servers'; render: 'dynamic' }
 | { path: '/social-platforms/youtube-channels'; render: 'dynamic' }
