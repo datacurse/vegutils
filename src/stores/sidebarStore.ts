@@ -44,8 +44,8 @@ export const sidebarStore = proxy<{ items: SidebarItem[] }>({
       children: [
         {
           type: 'doc',
-          title: 'Shrimp Eye Ablation',
-          slug: 'shrimp-eye-ablation'
+          title: 'Eyestalk Ablation',
+          slug: 'eyestalk-ablation'
         },
       ]
     },
