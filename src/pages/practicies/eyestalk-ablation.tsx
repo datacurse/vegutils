@@ -42,7 +42,27 @@ export default async function Page() {
       <Header2>What Consumers Can Do</Header2>
       <Text>
         By choosing plant-based alternatives to shrimp and other seafood, consumers can help reduce the demand for products produced using these cruel practices and support the development of more ethical food systems.
-      </Text> 
+      </Text>
+      <Header2>Footage</Header2>
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/x-COaQS4Gq0?si=OWH27hiRbAQrXtr3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ezPRC3_InHo?si=BILOpHAoSFCWjbJH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      {/* <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/bz8aY6Snp88?si=4DZXzIwo8-BjVMNz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */}
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Y78TDlgF-cg?si=XCWJTPobv68G5pn9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <Header2>Studies</Header2>
+      <UnorderedList>
+        <li><Link href="https://www.fao.org/4/af007e/AF007E04.htm">
+          Reproduction and Larval Rearing of Penaeids: Techniques and Commercial Applications.
+        </Link></li>
+        <li><Link href="https://journals.plos.org/plosone/article/figures?id=10.1371/journal.pone.0024427">
+          Molecular Mechanisms of Ovarian Maturation Following Eyestalk Ablation in Penaeus monodon.
+        </Link></li>
+        <li><Link href="https://www.researchgate.net/publication/381670861_EYESTALK_ABLATION_IN_CRUSTACEAN_PRODUCTION_A_BRIEF_REVIEW_OF_THE_ADVANTAGES_DISADVANTAGES_AND_PUBLIC_OPINIONS">
+          Eyestalk ablation in crustacean production a brief review of the advantages, disadvantages, and public opinions.
+        </Link></li>
+        <li><Link href="https://www.peta.org.uk/blog/prawns-eyestalk-ablation/">
+          Still Eating Prawns? Eyestalk Ablation Will Change Your Mind Forever
+        </Link></li>
+      </UnorderedList>
     </div>
   );
 }
