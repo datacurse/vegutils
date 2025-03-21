@@ -18,6 +18,7 @@ layer(base);
   --color-text-blue: #0d74ce;
   --color-bt-blue: #e6f4fe;
   --color-bt-blue-hover: #d5efff;
+  --color-bt-blue-dark: #c1e7ff;
 
   --color-text-green: #218358;
   --color-bt-green: #e6f6eb;

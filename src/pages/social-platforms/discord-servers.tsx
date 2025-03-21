@@ -24,14 +24,20 @@ export default function DiscordServers() {
     <div className="">
       {/* Filters and Sorting Section */}
       <div className="space-y-4">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between">
           <div className="flex items-end gap-2">
             <div className="text-2xl font-bold">Discord Servers</div>
             <div className="">
               {snap.filteredServers.length} servers
             </div>
           </div>
+          <div className="hover:underline flex items-end">
+            <a href="https://github.com/datacurse/vegutils/blob/main/public/csv/discord-servers.csv" target="_blank" >
+              Add or edit servers
+            </a>
+          </div>
         </div>
+
 
         <div className="flex items-center space-x-4">
           <input
@@ -61,8 +67,10 @@ export default function DiscordServers() {
         </div>
       </div>
 
+
+
       {/* Servers Grid */}
-      <section className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <section className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {snap.filteredServers.map((server: DiscordServer, index: number) => (
           <div
             key={index}

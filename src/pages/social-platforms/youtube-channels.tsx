@@ -16,13 +16,18 @@ export default function YoutubeChannels() {
   return (
     <div className="">
       {/* Filters and Sorting Section */}
-      <section className="space-y-4">
-        <div className="flex justify-between items-center">
+      <div className="space-y-4">
+        <div className="flex justify-between">
           <div className="flex items-end gap-2">
             <h1 className="text-2xl font-bold">Youtube Channels</h1>
             <span className="">
-              {snap.filteredChannels.length} servers
+              {snap.filteredChannels.length} channels
             </span>
+          </div>
+          <div className="hover:underline flex items-end">
+            <a href="https://github.com/datacurse/vegutils/blob/main/public/csv/youtube-channels.csv" target="_blank" >
+              Add or edit channels
+            </a>
           </div>
         </div>
 
@@ -51,10 +56,11 @@ export default function YoutubeChannels() {
               Title
             </div>
           </div>
-        </div>      </section>
+        </div>
+      </div>
 
       {/* Servers Grid */}
-      <section className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {snap.filteredChannels.map((channel: YoutubeChannel, index: number) => (
           <div
             key={index}
@@ -101,7 +107,7 @@ export default function YoutubeChannels() {
             </div>
           </div>
         ))}
-      </section>
-    </div>
+      </div>
+    </div >
   )
 }

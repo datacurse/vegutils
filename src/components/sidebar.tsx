@@ -1,10 +1,10 @@
 'use client';
 
 import { useSnapshot } from 'valtio';
-import { sidebarStore, SidebarItem } from '../sidebarStore';
 import { Link, useRouter_UNSTABLE as useRouter } from 'waku';
 import { FaChevronRight } from "react-icons/fa6";
 import { cn } from '@udecode/cn';
+import { SidebarItem, sidebarStore } from '@/stores/sidebarStore';
 
 export function Sidebar() {
   const snapshot = useSnapshot(sidebarStore);
@@ -101,7 +101,7 @@ function CategoryItem({ item, path, slugPath = [], currentPath }: {
   return (
     <div>
       <div className={cn(
-        "flex items-center justify-between hover:bg-bt-hover rounded-md mt-1",
+        "flex items-center justify-between hover:bg-bt-hover rounded-md mt-1 select-none",
         isActive && 'bg-bt-blue hover:bg-bt-blue-hover text-text-blue'
       )}>
         <Link
@@ -112,7 +112,8 @@ function CategoryItem({ item, path, slugPath = [], currentPath }: {
           <div>{item.title}</div>
         </Link>
         <div
-          className='px-3 py-[6px] hover:bg-bt duration-200 rounded-md cursor-pointer'
+          className={cn('px-3 py-[6px] hover:bg-bt duration-200 rounded-md cursor-pointer',
+            isActive && 'hover:bg-bt-blue-dark')}
           onClick={toggleCollapse}
         >
           <div className='h-5 w-5 flex items-center justify-center'>
