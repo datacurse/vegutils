@@ -4,7 +4,7 @@ export const UnorderedList = ({ children }: { children: ReactNode }) => {
   const listItems = React.Children.toArray(children).filter(
     (child): child is ReactElement<{ children: ReactNode }> =>
       React.isValidElement(child) &&
-      child.type === 'div'
+      child.type === 'li'
   );
 
   return (

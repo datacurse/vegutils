@@ -38,6 +38,19 @@ export const sidebarStore = proxy<{ items: SidebarItem[] }>({
     },
     {
       type: 'category',
+      title: 'Practicies',
+      slug: 'practicies',
+      collapsed: false,
+      children: [
+        {
+          type: 'doc',
+          title: 'Shrimp Eye Ablation',
+          slug: 'shrimp-eye-ablation'
+        },
+      ]
+    },
+    {
+      type: 'category',
       title: 'Social Platforms',
       slug: 'social-platforms',
       collapsed: false,
