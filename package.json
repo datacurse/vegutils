@@ -4,9 +4,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "waku dev",
+    "dev": "waku dev --port 3000",
     "build": "waku build",
-    "start": "waku start"
+    "start": "waku start --port 3000"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.3",
